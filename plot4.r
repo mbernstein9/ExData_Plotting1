@@ -31,7 +31,7 @@ plot(date_val,data[,3],"l",axes=FALSE,
 box()
 
 xaxis_lab=c("Thu","Fri","Sat")
-xaxis_val=as.double(date_val[c(1,1441,2880)])
+xaxis_val=as.double(date_val[c(1,length(date_val)/2+1,length(date_val))])
 yaxis<-seq(from=0,to=6,by=2)
 
 axis(side=1,labels=xaxis_lab,at=xaxis_val)
@@ -48,21 +48,20 @@ lines(date_val,data[,9],col="blue")
 
 box()
 
-xaxis_lab=c("Thu","Fri","Sat")
-xaxis_val=as.double(date_val[c(1,1441,2880)])
+
 yaxis<-seq(from=0,to=30,by=10)
 
-axis(side=1,labels=xaxis_lab,at=xaxis_val)
+axis(side=1,labels=xaxis_lab,at=xaxis_val) ##Set tick and Label from same call as in plot 1
 axis(side=2,at=yaxis)
 
 legend("topright",lty=1,col=c("black","red","blue"),
-	legend=colnames(data)[7:9],bty="n",cex=.755)
+	legend=colnames(data)[7:9],bty="n",cex=.75)
 
 
 ##Third Plot
 
 plot(date_val,data[,5],type="l",xlab="datetime",
-	ylab="Voltage")
+	ylab=colnames(data)[5])
 
 ##Fourth Plot
 

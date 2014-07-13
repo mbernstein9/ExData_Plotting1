@@ -10,7 +10,7 @@ colclasses<-sapply(data_init,class)
 ##read in full dataset then subset to proper dates
 
 data<-read.table(datafile,header=TRUE,sep=";",colClasses=colclasses,stringsAsFactors=FALSE,na.string='?')
-keep_rows<vector()
+keep_rows<-vector()
 keep_rows<-((data[,1]=="1/2/2007")|(data[,1]=="2/2/2007"))
 data<-data[keep_rows,]
 
@@ -31,7 +31,7 @@ plot(date_val,data[,3],"l",axes=FALSE,
 box()
 
 xaxis_lab=c("Thu","Fri","Sat")
-xaxis_val=as.double(date_val[c(1,1441,2880)])
+xaxis_val=as.double(date_val[c(1,length(date_val)/2+1,length(date_val))])
 yaxis<-seq(from=0,to=6,by=2)
 
 axis(side=1,labels=xaxis_lab,at=xaxis_val)

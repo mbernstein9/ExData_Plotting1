@@ -31,7 +31,7 @@ lines(date_val,data[,9],col="blue")
 box()
 
 xaxis_lab=c("Thu","Fri","Sat")
-xaxis_val=as.double(date_val[c(1,1441,2880)])
+xaxis_val=as.double(date_val[c(1,length(date_val)/2+1,length(date_val))])
 yaxis<-seq(from=0,to=30,by=10)
 
 axis(side=1,labels=xaxis_lab,at=xaxis_val)
