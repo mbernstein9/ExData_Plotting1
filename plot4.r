@@ -10,7 +10,7 @@ colclasses<-sapply(data_init,class)
 ##read in full dataset then subset to proper dates
 
 data<-read.table(datafile,header=TRUE,sep=";",colClasses=colclasses,stringsAsFactors=FALSE,na.string='?')
-keep_rows<vector()
+keep_rows<-vector()
 keep_rows<-((data[,1]=="1/2/2007")|(data[,1]=="2/2/2007"))
 data<-data[keep_rows,]
 

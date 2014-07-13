@@ -10,7 +10,7 @@ colclasses<-sapply(data_init,class)
 ##read in full dataset then subset to proper dates
 
 data<-read.table(datafile,header=TRUE,sep=";",colClasses=colclasses,stringsAsFactors=FALSE,na.string='?')
-keep_rows<vector()
+keep_rows<-vector()
 keep_rows<-((data[,1]=="1/2/2007")|(data[,1]=="2/2/2007"))
 data<-data[keep_rows,]
 
@@ -38,7 +38,7 @@ axis(side=1,labels=xaxis_lab,at=xaxis_val)
 axis(side=2,at=yaxis)
 
 legend("topright",lty=1,col=c("black","red","blue"),
-	legend=colnames(data)[7:9])
+	legend=colnames(data)[7:9],xjust=1)
 
 
 ##Copy to PNG file
